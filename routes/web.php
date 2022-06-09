@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::middleware('auth')->get('/', function () {
-    return view('welcome');
+    return view('dash');
 });
 
 // Route::get('/dash', function () {
