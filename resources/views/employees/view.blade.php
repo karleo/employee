@@ -1,173 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="styelsheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" />
+
 <style>
-
-* {
-	padding: 0;
-	margin: 0;
+html {
+	font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html,body {
-	background-color: #000000;
-	font-family: tahoma, sans-serif;
-	color: #E6EBEE;
+.phone-frame {	
+	height: 697px;
+	width: 345px;
 }
 
-#card {
-	background-color: #393B45;
-	height: 650px;
-	width: 550px;
-	margin: 10vh auto;
-	border-radius: 25px;
-	padding-bottom: 1px;
-	box-shadow: 2px 2px 5px #4069E2;
+#tabs .active {
+	border-color: #0072bc;
+	color: #0072bc;
+	font-weight: bold
 }
-
-h1 {
-	color: white;
-	text-align: center;
-	width: 100%;
-	background-color: #E6EBEE;
-	border-radius: 25px 25px 0 0;
-	color: #393B45;
-	padding: 30px 0;
-	font-weight: 800;
-	margin: 0;
-}
-
-.image-crop {
-	display: block;
-	position: relative;
-	background-color: #E6EBEE;
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
-	margin-top: 30px;
-	overflow: hidden;
-	border-radius: 50%;
-	box-shadow: 1px 1px 5px #4069E2;
-}
-
-#avatar {
-	display: inline;
-	height: 230px;
-	width: auto;
-	margin-left: -34px;
-}
-
-#bio {
-	display: block;
-	margin: 30px auto;
-	width: 280px;
-	height: auto;
-}
-
-#bio p {
-	color: #E6EBEE;
-	font-weight: lighter;
-	font-size: 15px;
-	text-align: justify;
-}
-
-#stats {
-	display: flex;
-	flex-direction: row;
-	height: auto;
-	width: 480px;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0 auto;
-	font-weight: 500;
-}
-
-.col {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: auto;
-}
-
-.stat {
-	font-size: 15px;
-	margin: 0;
-}
-
-.label {
-    font-size: 10px;
-	margin: 0;
-}
-
-#buttons {
-	display: flex;
-	margin: 0 auto;
-	justify-content: space-between;
-	width: 280px;
-}
-
-button {
-	display: block;
-	position: relative;
-	padding: 10px 0;
-	width: 130px;
-	margin: 30px 0;
-	border-radius: 25px;
-	border: none;
-	font-size: 20px;
-	letter-spacing: 0.2px;
-	font-weight: 500;
-	background-color: #4069E2;
-	color: #E6EBEE;
-}
-
-button:focus {
-	display: none;
-}
-
-button:hover {
-	transform: scale(1.03);
-	cursor: pointer;
-	transition: all 0.2s ease-in-out;
-}
-
-#msg{
-	background-color: #E6EBEE;
-	color: #393B45;
-}
-
 
 </style>
 </head>
 <body>
-
-    <div id="card">
-        <h1>{{$employees->fname}} {{$employees->lname}}</h1>
-        <div class="image-crop">
-            <img id="avatar" src="{{$employees->photo}}" class="img-thumbnail max-w-30px"></img>
-        </div>
-        <div id="bio">
-            <p>   </p>
-        </div>
-        <div id="stats">
-            <div class="col">
-                <p class="stat">{{$employees->company}}</p>
-                <p class="label">Company</p>
-            </div>
-            <div class="col">
-                <p class="stat">{{$employees->email_add}}</p>
-                <p class="label">Email Add</p>
-            </div>
-            <div class="col">
-                <p class="stat">{{$employees->mobile_no}}</p>
-                <p class="label">Contact</p>
-            </div>
-        </div>
-        <div id="buttons">
-            <button>Save</button>
-          
-        </div>
-    </div>
+	<div class="flex h-screen items-center justify-center overflow-auto">
+		<main class="bg-white phone-frame shadow-lg overflow-auto rounded">
+			<div id="header-actions" class="bg-white flex items-center justify-between p-4 sticky top-0">
+				<i class="material-icons text-gray-600"></i>
+				<h1 class="font-semibold invisible text-grey-900">{{$employees->fname}} {{$employees->lname}}</h1>
+				<i class="material-icons text-gray-600"></i>
+			</div>
+			<div id="user-header" class="bg-white flex items-center p-4">
+				<img src="{{$employees->photo}}" alt="" class="h-24 mr-6 rounded-full w-24">
+				<div class="flex flex-col flex-1">
+					<h2 class="font-semibold mb-2 text-xl">{{$employees->fname}} {{$employees->lname}}</h2>
+					 
+				</div>
+			</div>
+		 
+			<section class="border-b-8 border-gray-200 py-2">
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">local_phone</i><a href="tel:{{$employees->contact_no}}">{{$employees->contact_no}}</a>
+				</div>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">contacts</i><a href="tel:{{$employees->mobile_no}}">{{$employees->mobile_no}}</a>
+				</div>
+			</section>
+			<section class="border-b-8 border-gray-200 py-2">
+				<h3 class="font-bold font-md px-4 py-2 text-blue-700">Company</h3>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i
+						class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">contact_mail</i><a href = "mailto: {{$employees->email_add}}">{{$employees->email_add}}</a>
+				</div>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">business</i>{{$employees->company}}
+				</div>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">location_on</i>{{$employees->company_add}}
+				</div>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">web</i>{{$employees->website}}
+				</div>
+			</section>
+			 <section class="py-2">
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2"> 
+					<a  class="btn btn-warning btn-sm" href="{{ route('dvcard', [ $employees->emp_no ]) }}">	<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">file_download</i> Download	</a>
+			 </section>
+			{{-- <section class="py-2">
+				<h3 class="font-bold font-md px-4 py-2 text-blue-700">Other</h3>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i
+						class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">delete</i>Deactivate
+					Profile
+				</div>
+			</section> --}}
+		</main>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/perfect-scrollbar.min.js"></script>
 </body>
 </html>

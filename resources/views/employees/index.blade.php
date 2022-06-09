@@ -86,9 +86,9 @@
                           
                             <td><img src="{{ $employee->qr_path }}" class="img-thumbnail max-w-50px" /> </td>
                             <td>
-                                {{-- <a class="btn btn-info btn-sm" href="{{ route('e.edit', [ $student->student_id ]) }}"><i class="fa fa-edit"></i> Edit</a> --}}
-                                <a class="btn btn-success btn-sm" href="{{ route('profile', [ $employee->emp_no ]) }}"><i class="fa fa-eye"></i> View</a>
-                                {{-- <a target="_blank" class="btn btn-warning btn-sm" href="{{ route('print.single', [ $student->student_id ]) }}"><i class="fa fa-print"></i> Print</a> --}}
+                                <a class="btn btn-info btn-sm" href="{{ route('employee.gQR', [ $employee->emp_no ] ) }}"><i class="fa fa-edit"></i> Generate QR</a>
+                                <a class="btn btn-success btn-sm" href="{{ route('employee.show', [ $employee->emp_no ] ) }}"><i class="fa fa-eye"></i> View</a>
+                                <a target="_blank" class="btn btn-warning btn-sm" href="{{ route('dvcard', [ $employee->emp_no ]) }}"><i class="la la-files-o"></i>Vcard</a>
                             </td>
                         </tr>
                         @endforeach

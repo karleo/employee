@@ -6,15 +6,15 @@
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
-            <span class="text-muted font-weight-bold mr-2">2021©</span>
-            <a href="https://keenthemes.com/keen" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
+            <span class="text-muted font-weight-bold mr-2">2022©</span>
+            <a href="keen" target="_blank" class="text-dark-75 text-hover-primary">Karleo</a>
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->
         <div class="nav nav-dark">
-            <a href="https://keenthemes.com/keen" target="_blank" class="nav-link pl-0 pr-2">About</a>
-            <a href="https://keenthemes.com/keen" target="_blank" class="nav-link pr-2">Team</a>
-            <a href="https://keenthemes.com/keen" target="_blank" class="nav-link pr-0">Contact</a>
+            <a href=" " target="_blank" class="nav-link pl-0 pr-2">2TEL</a>
+            <a href=" " target="_blank" class="nav-link pr-2">Digital Track Logistics</a>
+            <a href=" " target="_blank" class="nav-link pr-0">Prime Logistics FZCO</a>
         </div>
         <!--end::Nav-->
     </div>

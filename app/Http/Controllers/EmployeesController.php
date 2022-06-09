@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Employees\CreateEmployeeRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 
 use QrCode;
+use JeroenDesloovere\VCard\VCard;
 
 class EmployeesController extends Controller
 {
@@ -140,5 +142,44 @@ class EmployeesController extends Controller
     public function destroy(Employees $employees)
     {
         //
+    }
+
+    public function downloadvcard(Employees $employees){
+        $vcard = new VCard();                
+        // define variables
+        $lastname = $employees->lname;
+        $firstname = $employees->fname;
+        $additional = '';  //middle name
+        $prefix = '';
+        $suffix = '';
+
+        // add personal data
+        $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
+
+        // add work data
+        $vcard->addCompany($employees->company);
+        $vcard->addJobtitle('');
+        $vcard->addRole('');
+        $vcard->addEmail($employees->email_add);
+        $vcard->addPhoneNumber($employees->contact_no, 'PREF;WORK');
+        $vcard->addPhoneNumber($employees->mobile_no, 'WORK');
+        $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
+        $vcard->addLabel('street, worktown, workpostcode Belgium');
+        $vcard->addURL($employees->website);
+        $vcard->addPhoto($employees->photo);
+        return $vcard->download();
+    }
+
+    public function generateQR(Employees $employees){
+
+        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/qr/'.$employees->emp_no), public_path('qr/'.$employees->emp_no.'.png'));  
+        $qr_path = asset('/qr/'.$employees->emp_no.'.png') ;
+        $employees->qr_path =  $qr_path;  
+        $employees->save();
+
+        return redirect()->route('employee.index')->with([
+            'message' => 'Employee has been generated successfully.',
+            'type' => 'success'
+        ]);
     }
 }

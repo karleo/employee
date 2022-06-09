@@ -13,24 +13,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::middleware('auth')->get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dash', function () {
-    return view('dash');
-});
+// Route::get('/dash', function () {
+//     return view('dash');
+// });
 
-Auth::routes();
-
-
-Route::get('/employee',[App\Http\Controllers\EmployeesController::class, 'index'])->name('employee.index');
-Route::get('/create',[App\Http\Controllers\EmployeesController::class, 'create'])->name('employee.create');
-Route::post('/create',[App\Http\Controllers\EmployeesController::class, 'store'])->name('employee.store');
-Route::get('/employee/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('profile');
-
+// Auth::routes();
+Auth::routes([
+    'register' => true,
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(function() {
+    
+    Route::get('/',[App\Http\Controllers\EmployeesController::class, 'index'])->name('index');
+    Route::get('/create',[App\Http\Controllers\EmployeesController::class, 'create'])->name('create');
+    Route::post('/create',[App\Http\Controllers\EmployeesController::class, 'store'])->name('store');
+    Route::get('/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('show');   
+    Route::get('/qr/{employees}',[App\Http\Controllers\EmployeesController::class, 'generateQR'])->name('gQR');
+});
 
+
+
+
+Route::get('/employee/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('employee.show');   
+Route::get('/vcard/{employees}',[App\Http\Controllers\EmployeesController::class, 'downloadvcard'])->name('dvcard');
