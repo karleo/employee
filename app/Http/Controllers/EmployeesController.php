@@ -182,4 +182,12 @@ class EmployeesController extends Controller
             'type' => 'success'
         ]);
     }
+
+    public function details(Employees $employees){
+        
+        return view('employees.detail',compact('employees'));
+
+    }
+
+
 }

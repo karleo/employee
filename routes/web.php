@@ -39,6 +39,8 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
     Route::post('/create',[App\Http\Controllers\EmployeesController::class, 'store'])->name('store');
     Route::get('/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('show');   
     Route::get('/qr/{employees}',[App\Http\Controllers\EmployeesController::class, 'generateQR'])->name('gQR');
+    Route::get('/detail/{employees}',[App\Http\Controllers\EmployeesController::class, 'details'])->name('detail');   
+
 });
 
 

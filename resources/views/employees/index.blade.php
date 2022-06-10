@@ -78,7 +78,7 @@
                         <tr>
                             <td><img src="{{ $employee->photo }}" class="img-thumbnail max-w-50px" /></td>
                             {{-- <td></td> --}}
-                            <td>{{ $employee->emp_no   }}</td>
+                            <td><a href="{{ route('employee.detail',[ $employee->emp_no ] ) }}">{{ $employee->emp_no   }}</td>
                             <td>{{ $employee->fname }} {{ $employee->mname }} {{ $employee->lname }}  </td>
                             <td>{{ $employee->email_add }}</td>
                             <td>{{ $employee->mobile_no }}</td>
