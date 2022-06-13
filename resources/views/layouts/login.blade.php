@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <!--
 Template Name: Keen - The Ultimate Bootstrap 4 HTML Admin Dashboard Theme

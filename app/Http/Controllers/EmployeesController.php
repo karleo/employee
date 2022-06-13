@@ -57,7 +57,8 @@ class EmployeesController extends Controller
         $validated = $request->validated();
         $photoname = $validated['fname'].'_'.$validated['lname'].'.'.$request->photo->extension();
         $photo_path = asset("photo/{$photoname}");
-        $qr_path = storage_path("app/public/qr/{$photoname}.jpg");
+        $qr_name = $validated['emp_no'].'.'."png";
+        $qr_path = storage_path("app/public/qr/{$qr_name}");
 
         $request->photo->move(public_path('photo'), $photoname);
 
@@ -74,7 +75,7 @@ class EmployeesController extends Controller
                'email_add' => $validated['email_add'],
                'website' => $validated['website'],
                'photo' => $photo_path,
-               'qr_path' => "qr/{$photoname}.png",
+               'qr_path' => $qr_path,
         ]);
 
 
@@ -88,7 +89,7 @@ class EmployeesController extends Controller
         //     $qr_path
         // );
  
-        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/qr/'.$validated['emp_no']), public_path('qr/'.$validated['emp_no'].'.png'));  
+        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/employee/'.$validated['emp_no']), public_path('qr/'.$validated['emp_no'].'.png'));  
 
  
         return redirect()->route('employee.index')->with([
@@ -172,7 +173,7 @@ class EmployeesController extends Controller
 
     public function generateQR(Employees $employees){
 
-        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/qr/'.$employees->emp_no), public_path('qr/'.$employees->emp_no.'.png'));  
+        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/employee/'.$employees->emp_no), public_path('qr/'.$employees->emp_no.'.png'));  
         $qr_path = asset('/qr/'.$employees->emp_no.'.png') ;
         $employees->qr_path =  $qr_path;  
         $employees->save();

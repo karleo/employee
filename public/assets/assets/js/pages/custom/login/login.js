@@ -53,7 +53,8 @@ var KTLogin = function() {
             e.preventDefault();
 
             validation.validate().then(function(status) {
-		        if (status == 'Valid') {
+		        if ( status == 'Valid' ) {
+                    /*
                     swal.fire({
 		                text: "All is cool! Now you submit this form",
 		                icon: "success",
@@ -65,6 +66,8 @@ var KTLogin = function() {
 		            }).then(function() {
 						KTUtil.scrollTop();
 					});
+                     */
+                    $('#kt_login_signin_form').submit();
 				} else {
 					swal.fire({
 		                text: "Sorry, looks like there are some errors detected, please try again.",
@@ -190,7 +193,6 @@ var KTLogin = function() {
         // Handle cancel button
         $('#kt_login_signup_cancel').on('click', function (e) {
             e.preventDefault();
-
             _showForm('signin');
         });
     }
