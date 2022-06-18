@@ -45,6 +45,9 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
 
 
 
+Route::get('/card', function () {
+    return view('card.index');
+});
 
 Route::get('/employee/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('employee.show');   
 Route::get('/vcard/{employees}',[App\Http\Controllers\EmployeesController::class, 'downloadvcard'])->name('dvcard');
