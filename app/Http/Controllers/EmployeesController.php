@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employees;
 use Illuminate\Http\Request;
 use App\Http\Requests\Employees\CreateEmployeeRequest;
+use App\Http\Requests\Employees\UpdateEmployeeRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
@@ -120,6 +121,7 @@ class EmployeesController extends Controller
     public function edit(Employees $employees)
     {
         //
+        return view('employees.edit',compact('employees'));
     }
 
     /**
@@ -129,9 +131,40 @@ class EmployeesController extends Controller
      * @param  \App\Models\Employees  $employees
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employees $employees)
+    public function update(UpdateEmployeeRequest $request, Employees $employees)
     {
         //
+        $validated = $request->validated();
+
+        $photoname = $validated['fname'].'_'.$validated['lname'].'.'.$request->photo->extension();
+        $photo_path = asset("photo/{$photoname}");
+        $qr_name = $validated['emp_no'].'.'."png";
+        $qr_path = storage_path("app/public/qr/{$qr_name}");
+
+        $request->photo->move(public_path('photo'), $photoname);
+
+        $employees->emp_no = $validated['emp_no'];
+        $employees->fname = $validated['fname'];
+        $employees->mname = $validated['mname'];
+        $employees->lname = $validated['lname'];
+        $employees->contact_no = $validated['contact_no'];
+        $employees->mobile_no = $validated['mobile_no'];
+        $employees->address = $validated['address'];
+        $employees->company = $validated['company'];
+        $employees->company_add = $validated['company_add'];
+        $employees->email_add = $validated['email_add'];
+        $employees->website = $validated['website'];
+        $employees->photo =  $photo_path;
+        $employees->qr_path = $qr_path;
+
+
+        $employees->save();
+
+        return redirect()->route('employee.edit', [ $employees->emp_no ])->with([
+            'message' => 'Employee information updated successfully',
+            'type' => 'success',
+        ]);
+
     }
 
     /**

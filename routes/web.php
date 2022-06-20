@@ -37,7 +37,9 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
     Route::get('/',[App\Http\Controllers\EmployeesController::class, 'index'])->name('index');
     Route::get('/create',[App\Http\Controllers\EmployeesController::class, 'create'])->name('create');
     Route::post('/create',[App\Http\Controllers\EmployeesController::class, 'store'])->name('store');
-    Route::get('/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('show');   
+    Route::get('/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('show');
+    Route::get('/edit/{employees}',[App\Http\Controllers\EmployeesController::class, 'edit'])->name('edit');   
+    Route::put('/update/{employees}',[App\Http\Controllers\EmployeesController::class, 'update'])->name('update');   
     Route::get('/qr/{employees}',[App\Http\Controllers\EmployeesController::class, 'generateQR'])->name('gQR');
     Route::get('/detail/{employees}',[App\Http\Controllers\EmployeesController::class, 'details'])->name('detail');   
 
