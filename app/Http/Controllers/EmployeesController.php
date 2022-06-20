@@ -164,8 +164,8 @@ class EmployeesController extends Controller
         $vcard->addEmail($employees->email_add);
         $vcard->addPhoneNumber($employees->contact_no, 'PREF;WORK');
         $vcard->addPhoneNumber($employees->mobile_no, 'WORK');
-        $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
-        $vcard->addLabel('street, worktown, workpostcode Belgium');
+        $vcard->addAddress(null, null, $employees->company_add, '', null, '', 'UAE');
+        // $vcard->addLabel('street, worktown, workpostcode Belgium');
         $vcard->addURL($employees->website);
         $vcard->addPhoto($employees->photo);
         return $vcard->download();
