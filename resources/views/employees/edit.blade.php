@@ -140,8 +140,10 @@
                                     </div>
                                     <span class="form-text text-muted">Please enter your company</span>
                                 </div>
+                               </div>
+                              <div class="form-group row">
                                 <div class="col-lg-4">
-                                    <label>Company Address:</label>
+                                    <label>Job Position:</label>
                                     <div class="input-group">
                                      <div class="input-group-append"><span class="input-group-text"><i class="la la-warehouse"></i></span></div>
                                      <input type="text" class="form-control" name="job_position" value="{{$employees->job_position}}" placeholder="Enter your job position"/>
