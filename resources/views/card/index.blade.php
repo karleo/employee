@@ -19,17 +19,20 @@
     }
 
     .card-wrapper{
+        display: flex;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
         perspective: 1000px;
+        flex-wrap: wrap;
     }
 
     .card {
         width: 600px;
         height: 400px;
         background-color: #fff;
+        flex-wrap: wrap;
         transform-style: preserve-3d;
         position: relative;
         box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
@@ -135,7 +138,12 @@
    {
     word-wrap: break-word;    
    }
-
+   @media (max-width:600px){
+    .card-wrapper{
+        flex: 100%;
+        max-width: 400px;
+    }
+    }
   </style>
 
 </head>
