@@ -29,7 +29,6 @@ class CreateEmployeeRequest extends FormRequest
         'emp_no' => 'required',
         'website' => 'required',
         'fname' => 'required',
-        'mname' => 'required',
         'lname' => 'required',
         'contact_no' => 'required',
         'mobile_no' => 'required',

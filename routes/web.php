@@ -47,9 +47,8 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
 
 
 
-Route::get('/card', function () {
-    return view('card.index');
-});
+// Route::get('/card', [App\Http\Controllers\CardController::class, 'index'])->name('card.index');
+Route::get('/card/{employees}', [App\Http\Controllers\CardController::class, 'cardshow'])->name('card.cardshow');
 
 Route::get('/employee/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('employee.show');   
 Route::get('/vcard/{employees}',[App\Http\Controllers\EmployeesController::class, 'downloadvcard'])->name('dvcard');

@@ -23,5 +23,6 @@ class Employees extends Model
         'website',
         'photo',
         'qr_path',
+        'job_position',
     ];
 }

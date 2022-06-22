@@ -144,6 +144,14 @@
                                     <label>Company Address:</label>
                                     <div class="input-group">
                                      <div class="input-group-append"><span class="input-group-text"><i class="la la-warehouse"></i></span></div>
+                                     <input type="text" class="form-control" name="job_position" value="{{$employees->job_position}}" placeholder="Enter your job position"/>
+                                    </div>
+                                    <span class="form-text text-muted">Please enter your job position</span>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label>Company Address:</label>
+                                    <div class="input-group">
+                                     <div class="input-group-append"><span class="input-group-text"><i class="la la-warehouse"></i></span></div>
                                      <input type="text" class="form-control" name="company_add" value="{{$employees->company_add}}" placeholder="Enter your company address"/>
                                     </div>
                                     <span class="form-text text-muted">Please enter your company address</span>

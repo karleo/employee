@@ -63,10 +63,12 @@ class EmployeesController extends Controller
 
         $request->photo->move(public_path('photo'), $photoname);
 
+        $data = $request->input();
+
         Employees::create([
                'emp_no' => $validated['emp_no'],
                'fname' => $validated['fname'],
-               'mname' => $validated['mname'],
+               'mname' => $data['mname'],
                'lname' => $validated['lname'],
                'contact_no' => $validated['contact_no'],
                'mobile_no' => $validated['mobile_no'],
@@ -77,6 +79,8 @@ class EmployeesController extends Controller
                'website' => $validated['website'],
                'photo' => $photo_path,
                'qr_path' => $qr_path,
+               'job_position' => $data['job_position'],
+
         ]);
 
 
@@ -135,7 +139,7 @@ class EmployeesController extends Controller
     {
         //
         $validated = $request->validated();
-
+        $data = $request->input();
         $photoname = $validated['fname'].'_'.$validated['lname'].'.'.$request->photo->extension();
         $photo_path = asset("photo/{$photoname}");
         $qr_name = $validated['emp_no'].'.'."png";
@@ -145,7 +149,7 @@ class EmployeesController extends Controller
 
         $employees->emp_no = $validated['emp_no'];
         $employees->fname = $validated['fname'];
-        $employees->mname = $validated['mname'];
+        $employees->mname = $data['mname'];
         $employees->lname = $validated['lname'];
         $employees->contact_no = $validated['contact_no'];
         $employees->mobile_no = $validated['mobile_no'];
@@ -153,9 +157,10 @@ class EmployeesController extends Controller
         $employees->company = $validated['company'];
         $employees->company_add = $validated['company_add'];
         $employees->email_add = $validated['email_add'];
-        $employees->website = $validated['website'];
+        $employees->website = $data['website'];
         $employees->photo =  $photo_path;
         $employees->qr_path = $qr_path;
+        $employees->job_position = $data['job_position'];
 
 
         $employees->save();

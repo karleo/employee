@@ -74,7 +74,7 @@
     }
 
     .right {
-        width: 60%;
+        width: 70%;
         color: #fff;
     }
 
@@ -131,6 +131,10 @@
     .card-back img{
         width: 40%;
     }
+    p
+   {
+    word-wrap: break-word;    
+   }
 
   </style>
 
@@ -147,35 +151,36 @@
                     <div class="person right-content">
                         <i class="fas fa-user-tie"></i>
                         <div>
-                            <h4>Nasser Alajmi</h4>
-                            <p>CEO</p>
+                            <h4>{{$employees->fname}} {{$employees->lname}}</h4>
+                            <p>{{$employees->job_position}}</p>
                         </div>
                     </div>
                     <div class="phone right-content">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <p>+971559990696</p>
-                            <p>+966559149000</p>
+                            <p>{{$employees->contact_no}}</p>
+                            <p>{{$employees->mobile_no}}</p>
                         </div>
                     </div>
                     <div class="email right-content">
                         <i class="fas fa-envelope-open"></i>
                         <div>
-                            <p>nasser@primelogistics.ae</p>
+                            <p>{{$employees->email_add}}</p>
                         </div>
                     </div>
                     <div class="address right-content">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <p>Warehouse G09 DAFZA</p>
-                            <p>Dubai, UAE</p>
+                            <p>{{$employees->company_add}}</p>
+                            {{-- <p>Warehouse G09 DAFZA</p>
+                            <p>Dubai, UAE</p> --}}
                             <p>Post Box: 371961</p>
                         </div>
                     </div>                   
                 </div>
             </div>
             <div class="card-back">
-                <img src="{{asset('qr/000002.png')}}" alt="" >
+                <img src="{{$employees->qr_path}}" alt="" >
             </div>
         </div>
     </div>

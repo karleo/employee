@@ -26,9 +26,7 @@ class UpdateEmployeeRequest extends FormRequest
         return [
             //
             'emp_no' => 'required',
-            'website' => 'required',
             'fname' => 'required',
-            'mname' => 'required',
             'lname' => 'required',
             'contact_no' => 'required',
             'mobile_no' => 'required',
