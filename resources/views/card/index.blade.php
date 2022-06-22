@@ -37,7 +37,7 @@
         transition: transform 1s;
     }
     .card-wrapper:hover .card{
-        transform: rotateY(180deg);
+        /* transform: rotateY(180deg); */
     }
     .card-front, 
     .card-back{
@@ -145,7 +145,10 @@
             <div class="card-front">
                 <div class="left">
                   <img src="{{asset('img/157x54.png')}}"  />  
-                  <h5><span>www.primelogistics.ae</span></h5>
+                  <h5><span>www.primelogistics.ae</span></h5>                 
+                    <br>
+                        <img src="{{$employees->qr_path}}" style="width:120px;height:120px;" alt="" >
+                     
                 </div>
                 <div class="right">
                     <div class="person right-content">
