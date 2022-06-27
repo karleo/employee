@@ -159,7 +159,7 @@ class EmployeesController extends Controller
         $employees->email_add = $validated['email_add'];
         $employees->website = $data['website'];
         $employees->photo =  $photo_path;
-        $employees->qr_path = $qr_path;
+        // $employees->qr_path = $qr_path;
         $employees->job_position = $data['job_position'];
 
 

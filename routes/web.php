@@ -52,3 +52,8 @@ Route::get('/card/{employees}', [App\Http\Controllers\CardController::class, 'ca
 
 Route::get('/employee/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('employee.show');   
 Route::get('/vcard/{employees}',[App\Http\Controllers\EmployeesController::class, 'downloadvcard'])->name('dvcard');
+
+
+Route::get('/qarat',function(){
+    return view('card.qarat');
+});
