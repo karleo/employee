@@ -45,8 +45,6 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
 
 });
 
-
-
 // Route::get('/card', [App\Http\Controllers\CardController::class, 'index'])->name('card.index');
 Route::get('/card/{employees}', [App\Http\Controllers\CardController::class, 'cardshow'])->name('card.cardshow');
 

@@ -65,7 +65,7 @@
                         <!--end::Svg Icon-->
                     </span>
                 </span>
-                <span class="navi-text text-muted text-hover-primary">{{$employees}}</span>
+                <span class="navi-text text-muted text-hover-primary"> </span>
             </span>
         </a>
     </div>

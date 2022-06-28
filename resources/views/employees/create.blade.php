@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <label for="photo">Photo</label><br/>
                                 <div class="image-input image-input-outline" id="kt_image_1">
-                                    <div class="image-input-wrapper" style="background:url('{{ asset('media/users/blank.png') }}'); background-size: cover;"></div>
+                                    <div class="image-input-wrapper" style="background:url('{{ asset('assets/assets/media/users/blank.png') }}'); background-size: cover;"></div>
                                     <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Change avatar">
                                         <i class="fa fa-pen icon-sm text-muted"></i>
                                         <input type="file" name="photo" accept=".png, .jpg, .jpeg"/>
