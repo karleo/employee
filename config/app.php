@@ -178,6 +178,8 @@ return [
 
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
+        Spatie\Permission\PermissionServiceProvider::class,
+
     ],
 
     /*

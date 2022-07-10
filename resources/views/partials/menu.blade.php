@@ -17,7 +17,7 @@
         </a>
     </li>
     <li class="menu-section">
-        <h4 class="menu-text">Maintenance</h4>
+        <h4 class="menu-text">Menu</h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
     </li>
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -60,6 +60,8 @@
         </div>
     </li>
 
+     
+
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
             <span class="svg-icon menu-icon svg-icon-primary svg-icon-2x">
@@ -70,7 +72,7 @@
                     <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
                 </g>
             </svg><!--end::Svg Icon--></span>
-            <span class="menu-text">Sections</span>
+            <span class="menu-text">Maintenance</span>
             <i class="menu-arrow"></i>
         </a>
         <div class="menu-submenu">
@@ -78,7 +80,7 @@
             <ul class="menu-subnav">
                 <li class="menu-item menu-item-parent" aria-haspopup="true">
                     <span class="menu-link">
-                        <span class="menu-text">Sections</span>
+                        <span class="menu-text">Maintenance</span>
                     </span>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
@@ -86,19 +88,22 @@
                         <i class="menu-bullet menu-bullet-line">
                             <span></span>
                         </i>
-                        <span class="menu-text">Manage List</span>
+                        <span class="menu-text">User</span>
                     </a>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
-                    <a href="#" class="menu-link">
+                    <a href="{{route('role.index')}}" class="menu-link">
                         <i class="menu-bullet menu-bullet-line">
                             <span></span>
                         </i>
-                        <span class="menu-text">Create Section</span>
+                        <span class="menu-text">Role</span>
                     </a>
                 </li>
             </ul>
         </div>
     </li>
+
 </ul>
 <!--end::Menu Nav-->
+
+

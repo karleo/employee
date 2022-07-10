@@ -12,3 +12,4 @@
 <!--begin::Page Scripts(used by this page)-->
 <script src="{{asset('assets/assets/js/pages/widgets.js')}}"></script>
 <!--end::Page Scripts-->
+

@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Employee List')
-
+@section('title', 'Role')
 
 @section('content')
+
 
   <!--begin::Subheader-->
   <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
@@ -13,7 +13,7 @@
             <!--begin::Page Heading-->
             <div class="d-flex align-items-baseline flex-wrap mr-5">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold my-1 mr-5">Employees</h5>
+                <h5 class="text-dark font-weight-bold my-1 mr-5">Roles</h5>
                 {{-- <h5 class="text-dark font-weight-bold my-1 mr-5">Employees {{ isset($section) ? " from Section: {$section->section_name}": "" }}</h5> --}}
                 <!--end::Page Title-->
             </div>
@@ -22,7 +22,7 @@
         <!--end::Info-->
         <!--begin::Toolbar-->
         <div class="d-flex align-items-center flex-wrap">
-            <a href="{{ route('employee.create') }}" class="btn btn-fixed-height btn-bg-white btn-text-dark-50 btn-hover-text-primary btn-icon-primary font-weight-bolder font-size-sm px-5 my-1 mr-3">
+            <a href="{{ route('role.create') }}" class="btn btn-fixed-height btn-bg-white btn-text-dark-50 btn-hover-text-primary btn-icon-primary font-weight-bolder font-size-sm px-5 my-1 mr-3">
                 <span class="svg-icon svg-icon-md">
                     <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -33,7 +33,7 @@
                         </g>
                     </svg>
                     <!--end::Svg Icon-->
-                </span>Add Employee
+                </span>Add Role
             </a>
 
             {{-- @if(isset($section))
@@ -59,30 +59,25 @@
     <div class="row">
         <div class="col-lg-12 col-xs-12">
             <div class="card">
-                <div id="kt_datatable" class="card-body">
-                    <table id="example" class="table table-hover table-bordered datatable">
+                <div class="card-body">
+                    <table class="table table-hover table-bordered datatable">
                         <thead>
                         <tr>
-                            <th>Photo</th>
-                            <th>Employee No.</th>
-                            <th>Full Name</th>
-                            <th>Email Add</th>
-                            <th>Mobile No.</th>
-                            <th>QR Code</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Guard Name</th> 
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($employees as $employee)
+                        {{-- @foreach($employees as $employee)
                         <tr>
                             <td><img src="{{ $employee->photo }}" class="img-thumbnail max-w-50px" /></td>
-                            {{-- <td></td> --}}
                             <td><a href="{{ route('employee.detail',[ $employee->emp_no ] ) }}">{{ $employee->emp_no   }}</td>
                             <td>{{ $employee->fname }} {{ $employee->mname }} {{ $employee->lname }}  </td>
                             <td>{{ $employee->email_add }}</td>
-                            <td>{{ $employee->mobile_no }}</td>
-
-
+                            <td>{{ $employee->mobile_no }}</td>                            
+                          
                             <td><img src="{{ $employee->qr_path }}" class="img-thumbnail max-w-50px" /> </td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="{{ route('employee.gQR', [ $employee->emp_no ] ) }}"><i class="fa fa-edit"></i> Generate QR</a>
@@ -92,7 +87,7 @@
                                 <a target="_blank" class="btn btn-warning btn-sm" href="{{ route('dvcard', [ $employee->emp_no ]) }}"><i class="la la-files-o"></i>Vcard</a>
                             </td>
                         </tr>
-                        @endforeach
+                        @endforeach --}}
                         </tbody>
                     </table>
                 </div>
@@ -101,9 +96,11 @@
     </div>
 </div>
 
+ 
 
+@endsection 
 
-@endsection
+ 
 @push('styles')
     <link href="{{ asset('assets/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
 @endpush
@@ -111,10 +108,4 @@
 @push('scripts')
     <script src="{{ asset('assets/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script src="{{ asset('assets/assets/js/pages/admin.js') }}"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
 @endpush

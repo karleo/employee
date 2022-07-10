@@ -6,7 +6,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Prime Logistics Card</title>
+  <title>QARAT Card</title>
   <style>
     *{
         margin: 0;
@@ -152,8 +152,8 @@
         <div class="card">
             <div class="card-front">
                 <div class="left">
-                  <img src="{{asset('img/157x54.png')}}"  />  
-                  <h5><span>www.primelogistics.ae</span></h5>                 
+                  <img src="{{asset('img/logo-qarat- Final.png')}}"  />  
+                  <h5><span>qarat.sa</span></h5>                 
                     <br>
                         <img src="" style="width:120px;height:120px;" alt="" >                     
                 </div>
@@ -161,8 +161,8 @@
                     <div class="person right-content">
                         <i class="fas fa-user-tie"></i>
                         <div>
-                            <h4>leomar</h4>
-                            <p>test</p>
+                            <h4>TEST NAME</h4>
+                            <p>OPERATION MANAGER</p>
                         </div>
                     </div>
                     <div class="phone right-content">

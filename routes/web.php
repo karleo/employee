@@ -32,8 +32,7 @@ Auth::routes([
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(function() {
-    
+Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(function() {    
     Route::get('/',[App\Http\Controllers\EmployeesController::class, 'index'])->name('index');
     Route::get('/create',[App\Http\Controllers\EmployeesController::class, 'create'])->name('create');
     Route::post('/create',[App\Http\Controllers\EmployeesController::class, 'store'])->name('store');
@@ -45,11 +44,18 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
 
 });
 
+Route::name('role.')->middleware(['auth'])->prefix('role')->group(function() {
+    Route::get('/',[App\Http\Controllers\RoleController::class, 'index'])->name('index');
+    Route::get('/create',[App\Http\Controllers\RoleController::class, 'create'])->name('create');
+    
+});
+
 // Route::get('/card', [App\Http\Controllers\CardController::class, 'index'])->name('card.index');
 Route::get('/card/{employees}', [App\Http\Controllers\CardController::class, 'cardshow'])->name('card.cardshow');
 
 Route::get('/employee/{employees}',[App\Http\Controllers\EmployeesController::class, 'show'])->name('employee.show');   
 Route::get('/vcard/{employees}',[App\Http\Controllers\EmployeesController::class, 'downloadvcard'])->name('dvcard');
+
 
 
 Route::get('/qarat',function(){
