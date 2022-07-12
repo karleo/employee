@@ -824,7 +824,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
-// Component Definition 
+// Component Definition
 var KTDialog = function(options) {
     // Main object
     var the = this;
@@ -1219,7 +1219,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
-// Component Definition 
+// Component Definition
 var KTImageInput = function(elementId, options) {
     // Main object
     var the = this;
@@ -9207,9 +9207,9 @@ KTUtil.ready(function() {
     }
 
     // Init Code Highlighter & Preview Blocks(used to demonstrate the theme features)
-    if (typeof KTLayoutExamples !== 'undefined') {
-        KTLayoutExamples.init();
-    }
+    // if (typeof KTLayoutExamples !== 'undefined') {
+    //     // KTLayoutExamples.init();
+    // }
 
     // Init Demo Selection Panel
     if (typeof KTLayoutDemoPanel !== 'undefined') {
@@ -9622,7 +9622,7 @@ var KTLayoutContent = function() {
 
         if (_element) {
             height = height - parseInt(KTUtil.css(_element, 'paddingTop')) - parseInt(KTUtil.css(_element, 'paddingBottom'));
-        }        
+        }
 
         height = height - KTLayoutHeader.getHeight();
         height = height - KTLayoutSubheader.getHeight();
@@ -9972,7 +9972,7 @@ var KTLayoutSidebar = function() {
 
                 if (KTUtil.isBreakpointUp('lg')) {
                     height = height - KTLayoutHeader.getHeight();
-                } 
+                }
 
                 if (header) {
                     height = height - parseInt(KTUtil.css(header, 'height'));
