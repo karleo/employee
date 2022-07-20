@@ -3,7 +3,7 @@
 @section('title', 'Create Employee')
 
 @section('content')
- 
+
 <!--begin::Subheader-->
 <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
     <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
@@ -85,7 +85,7 @@
                                     <label>Last Name:</label>
                                     <input type="text" class="form-control" name="lname" placeholder="Enter last name"/>
                                     <span class="form-text text-muted">Please enter your last name</span>
-                                 </div> 
+                                 </div>
                                 </div>
 
                                 <div class="form-group row">
@@ -110,7 +110,7 @@
                                    <input type="text" class="form-control" name="mobile_no" placeholder="Mobile number"/>
                                   </div>
                                   <span class="form-text text-muted">Please enter Mobile number</span>
-                                 </div>                              
+                                 </div>
                                 </div>
 
                                 <div class="form-group row">
@@ -154,12 +154,12 @@
                                     </div>
                                     <span class="form-text text-muted">Please enter your company address</span>
                                 </div>
-                                
+
                                 </div>
                                </div>
-                            </div>                           
-                     
-                             
+                            </div>
+
+
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                             <button type="reset" class="btn btn-secondary">Cancel</button>
@@ -172,7 +172,7 @@
         </div>
     </div>
 </div>
- 
+
 @endsection
 
 

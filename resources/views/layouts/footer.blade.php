@@ -43,12 +43,12 @@
 <!--begin::Header-->
 <div class="d-flex align-items-center mt-5">
 <div class="symbol symbol-100 mr-5">
-    <div class="symbol-label" style="background-image:url('assets/assets/media/users/150-6.jpg')"></div>
+    <div class="symbol-label" style="background-image:url('assets/assets/media/users/150-15.jpg')"></div>
     <i class="symbol-badge bg-success"></i>
 </div>
 <div class="d-flex flex-column">
-    <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">Ryan Smith</a>
-    <div class="text-muted mt-1">Art Director</div>
+    <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">Leomar Ortigas</a>
+    <div class="text-muted mt-1">Software Engineer</div>
     <div class="navi mt-1">
         <a href="#" class="navi-item">
             <span class="navi-link p-0 pb-2">
@@ -103,7 +103,7 @@
     </div>
 </a>
 <!--end:Item-->
- 
+
  <!--begin::Item-->
  <span class="navi-item mt-2">
     <span class="navi-link">

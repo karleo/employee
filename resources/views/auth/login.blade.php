@@ -7,7 +7,7 @@
         <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">
             <!--begin::Logo-->
             <a href="#" class="flex-column-auto py-5 py-md-0">
-                <img src="{{ asset('assets/assets/media/logos/logo-6.svg') }}" alt="logo" class="h-50px" />
+                <img src="{{ asset('assets/assets/media/logos/157x54.png') }}" alt="logo" class="h-50px" />
             </a>
             <!--end::Logo-->
             <!--
@@ -55,7 +55,7 @@
                     <!--end::Form-->
                 </div>
                 <!--end::Signin-->
-                
+
             </div>
             <div class="col-lg-6 bgi-size-contain bgi-no-repeat bgi-position-y-center bgi-position-x-center min-h-150px mt-10 m-md-0" style="background-image: url({{asset('assets/assets/media/svg/illustrations/accomplishment.svg')}})"></div>
         </div>

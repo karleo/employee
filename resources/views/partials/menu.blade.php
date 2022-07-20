@@ -20,6 +20,14 @@
         <h4 class="menu-text">Menu</h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
     </li>
+
+    <li class="menu-item menu-item-active" aria-haspopup="true">
+        <a href="{{route('time.create')}}" class="menu-link">
+        <i class=" menu-icon flaticon-time"> </i>
+            <span class="menu-text">Time Check</span>
+        </a>
+    </li>
+
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
             <span class="svg-icon menu-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:D:\xampp\htdocs\keenthemes\legacy\keen\theme\demo1\dist/../src/media/svg/icons\General\User.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -60,7 +68,7 @@
         </div>
     </li>
 
-     
+
 
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
