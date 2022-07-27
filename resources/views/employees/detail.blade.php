@@ -3,7 +3,7 @@
 @section('title', 'Employee Detail')
 
 @section('content')
- 
+
 	<!--begin::Subheader-->
     <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
         <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
@@ -41,9 +41,7 @@
             <!--end::Info-->
             <!--begin::Toolbar-->
             <div class="d-flex align-items-center flex-wrap">
-                <!--begin::Dropdown-->
-                <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="top">
-                    <a href="#" class="btn btn-fixed-height btn-bg-white btn-text-dark-50 btn-hover-text-primary btn-icon-primary font-weight-bolder font-size-sm px-5 my-1 mr-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="{{ route('employee.create') }}" class="btn btn-fixed-height btn-bg-white btn-text-dark-50 btn-hover-text-primary btn-icon-primary font-weight-bolder font-size-sm px-5 my-1 mr-3">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Add-user.svg-->
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -54,11 +52,9 @@
                             </g>
                         </svg>
                         <!--end::Svg Icon-->
-                    </span>Add Employee</a>                 
-                </div>
-                <!--end::Dropdown-->
+                    </span>Add Employee
+                </a>
 
-                  
             </div>
             <!--end::Toolbar-->
         </div>
@@ -91,7 +87,7 @@
                                                 <!--end::Svg Icon-->
                                             </span>
                                         </a>
-                                        
+
                                     </div>
                                 </div>
                                 <!--end::Toolbar-->
@@ -312,7 +308,7 @@
                                             <span class="navi-text font-size-lg">Saved Credit Cards</span>
                                         </a>
                                     </div>
-                                  
+
                                 </div>
                                 <!--end::Nav-->
                             </div>
@@ -331,7 +327,7 @@
                                     <h3 class="card-label font-weight-bolder text-dark">Personal Information</h3>
                                     <span class="text-muted font-weight-bold font-size-sm mt-1">Scan the QR code to get the information</span>
                                 </div>
-                                
+
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
@@ -351,7 +347,7 @@
 
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                     <!--end::Body-->
                                 </form>

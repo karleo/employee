@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 Route::middleware('auth')->get('/', function () {
     return view('dash');
 });
@@ -41,7 +42,6 @@ Route::name('employee.')->middleware(['auth'])->prefix('employee')->group(functi
     Route::put('/update/{employees}',[App\Http\Controllers\EmployeesController::class, 'update'])->name('update');
     Route::get('/qr/{employees}',[App\Http\Controllers\EmployeesController::class, 'generateQR'])->name('gQR');
     Route::get('/detail/{employees}',[App\Http\Controllers\EmployeesController::class, 'details'])->name('detail');
-
 });
 
 Route::name('time.')->middleware(['auth'])->prefix('time')->group(function(){
