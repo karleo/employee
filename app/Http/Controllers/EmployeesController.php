@@ -35,13 +35,13 @@ class EmployeesController extends Controller
     public function create()
     {
         //
-        $maxID = Employees::max('id');        
+        $maxID = Employees::max('id');
         if (is_numeric($maxID)) {
             $nextNum = $maxID + 1;
         } else {
             $nextNum = 1;
         }
-        $data = str_pad($nextNum, 6, '0', STR_PAD_LEFT);    
+        $data = str_pad($nextNum, 6, '0', STR_PAD_LEFT);
 
         return view('employees.create',compact('data'));
     }
@@ -56,7 +56,7 @@ class EmployeesController extends Controller
     {
         //
         $validated = $request->validated();
-        $photoname = $validated['fname'].'_'.$validated['lname'].'.'.$request->photo->extension();
+        $photoname = $validated['emp_no'].'.'.$request->photo->extension();
         $photo_path = asset("photo/{$photoname}");
         $qr_name = $validated['emp_no'].'.'."png";
         $qr_path = storage_path("app/public/qr/{$qr_name}");
@@ -65,7 +65,7 @@ class EmployeesController extends Controller
 
         $data = $request->input();
 
-        Employees::create([
+        $employees = Employees::create([
                'emp_no' => $validated['emp_no'],
                'fname' => $validated['fname'],
                'mname' => $data['mname'],
@@ -93,10 +93,12 @@ class EmployeesController extends Controller
         //     url("profile/{$profile_token}"),
         //     $qr_path
         // );
- 
-        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/employee/'.$validated['emp_no']), public_path('qr/'.$validated['emp_no'].'.png'));  
 
- 
+        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/vcard/'.$validated['emp_no']), public_path('qr/'.$validated['emp_no'].'.png'));
+        $qr_path = asset('/qr/'.$employees->emp_no.'.png') ;
+        $employees->qr_path =  $qr_path;
+        $employees->save();
+
         return redirect()->route('employee.index')->with([
             'message' => 'New Employee has been created successfully.',
             'type' => 'success'
@@ -140,7 +142,7 @@ class EmployeesController extends Controller
         //
         $validated = $request->validated();
         $data = $request->input();
-        $photoname = $validated['fname'].'_'.$validated['lname'].'.'.$request->photo->extension();
+        $photoname = $validated['emp_no'].'.'.$request->photo->extension();
         $photo_path = asset("photo/{$photoname}");
         $qr_name = $validated['emp_no'].'.'."png";
         $qr_path = storage_path("app/public/qr/{$qr_name}");
@@ -184,17 +186,15 @@ class EmployeesController extends Controller
     }
 
     public function downloadvcard(Employees $employees){
-        $vcard = new VCard();                
+        $vcard = new VCard();
         // define variables
         $lastname = $employees->lname;
         $firstname = $employees->fname;
         $additional = '';  //middle name
         $prefix = '';
         $suffix = '';
-
         // add personal data
         $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
-
         // add work data
         $vcard->addCompany($employees->company);
         $vcard->addJobtitle('');
@@ -211,9 +211,9 @@ class EmployeesController extends Controller
 
     public function generateQR(Employees $employees){
 
-        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/employee/'.$employees->emp_no), public_path('qr/'.$employees->emp_no.'.png'));  
+        $qrcodepath = QrCode::size(200)->format('png')->generate(asset('/vcard/'.$employees->emp_no), public_path('qr/'.$employees->emp_no.'.png'));
         $qr_path = asset('/qr/'.$employees->emp_no.'.png') ;
-        $employees->qr_path =  $qr_path;  
+        $employees->qr_path =  $qr_path;
         $employees->save();
 
         return redirect()->route('employee.index')->with([
@@ -223,7 +223,7 @@ class EmployeesController extends Controller
     }
 
     public function details(Employees $employees){
-        
+
         return view('employees.detail',compact('employees'));
 
     }
