@@ -1,1 +1,1 @@
-git@github.com:karleo/employee.git
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
