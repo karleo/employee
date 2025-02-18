@@ -153,7 +153,7 @@
             <div class="card-front">
                 <div class="left">
                   <img src="{{asset('img/157x54.png')}}"  />  
-                  <h5><span>www.primelogistics.ae</span></h5>                 
+                  <h5><span>{{$employees->website }} </span></h5>                 
                     <br>
                         <img src="{{$employees->qr_path}}" style="width:120px;height:120px;" alt="" >
                      
@@ -182,10 +182,10 @@
                     <div class="address right-content">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <p>{{$employees->company_add}}</p>
+                            <p style="font-size:14px;">{{$employees->company_add}}</p>
                             {{-- <p>Warehouse G09 DAFZA</p>
                             <p>Dubai, UAE</p> --}}
-                            <p>Post Box: 371961</p>
+                            <p>PO Box: {{$employees->postcode}}</p>
                         </div>
                     </div>                   
                 </div>
