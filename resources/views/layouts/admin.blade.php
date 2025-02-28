@@ -1,7 +1,5 @@
 @includeIf('layouts.header')
 
-
 @yield('content')
 
-
-@includeIf('layouts.footer') 
+@includeIf('layouts.footer')

@@ -25,10 +25,10 @@ var KTLogin = function() {
 			KTUtil.getById('kt_login_signin_form'),
 			{
 				fields: {
-					username: {
+					email: {
 						validators: {
 							notEmpty: {
-								message: 'Username is required'
+								message: 'Email Address is required'
 							}
 						}
 					},
@@ -70,7 +70,7 @@ var KTLogin = function() {
                     $('#kt_login_signin_form').submit();
 				} else {
 					swal.fire({
-		                text: "Sorry, looks like there are some errors detected, please try again.",
+		                text: "Sorry, looks like there are some required or wrong inputs detected, please try again.",
 		                icon: "error",
 		                buttonsStyling: false,
 		                confirmButtonText: "Ok, got it!",
