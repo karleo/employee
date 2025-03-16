@@ -14,8 +14,8 @@
     }
     body{
         font-family: "Montserrat", sans-serif;
-        background-color: #ccc;       
-        
+        background-color: #ccc;
+
     }
 
     .card-wrapper{
@@ -42,11 +42,11 @@
     .card-wrapper:hover .card{
         /* transform: rotateY(180deg); */
     }
-    .card-front, 
+    .card-front,
     .card-back{
         width: 100%;
         height: 100%;
-        backface-visibility: hidden; 
+        backface-visibility: hidden;
         border-radius: inherit;
     }
 
@@ -84,7 +84,7 @@
     .right-content {
         display: flex;
         align-items: center;
-        margin: 20px, 0; 
+        margin: 20px, 0;
         text-indent: 10px;
     }
     .person {
@@ -97,7 +97,7 @@
       width: 35px;
       height: 35px;
       border: 2px solid #fff;
-      border-radius: 50%;  
+      border-radius: 50%;
       display: flex;
       /* justify-content: center; */
       align-items: center;
@@ -136,7 +136,7 @@
     }
     p
    {
-    word-wrap: break-word;    
+    word-wrap: break-word;
    }
    @media (max-width:600px){
     .card-wrapper{
@@ -152,11 +152,11 @@
         <div class="card">
             <div class="card-front">
                 <div class="left">
-                  <img src="{{asset('img/157x54.png')}}"  />  
-                  <h5><span>{{$employees->website }} </span></h5>                 
+                  <img src="{{asset('img/transparent-KSA.png')}}"  />
+                  <h5><span>{{$employees->website }} </span></h5>
                     <br>
                         <img src="{{$employees->qr_path}}" style="width:120px;height:120px;" alt="" >
-                     
+
                 </div>
                 <div class="right">
                     <div class="person right-content">
@@ -187,7 +187,7 @@
                             <p>Dubai, UAE</p> --}}
                             <p>PO Box: {{$employees->postcode}}</p>
                         </div>
-                    </div>                   
+                    </div>
                 </div>
             </div>
             <div class="card-back">
