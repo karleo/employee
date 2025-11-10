@@ -62,6 +62,9 @@ html {
 				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
 					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">web</i>{{$employees->website}}
 				</div>
+				<div class="flex hover:bg-gray-100 items-center px-4 py-2">
+					<i class="bg-gray-200 h-10 inline-block material-icons mr-4 p-2 rounded-full text-gray-600 w-10">linkedin</i>{{$employees->linkedin}}
+				</div>
 			</section>
 			 <section class="py-2">
 				<div class="flex hover:bg-gray-100 items-center px-4 py-2"> 

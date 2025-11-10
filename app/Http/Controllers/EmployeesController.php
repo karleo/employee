@@ -206,6 +206,7 @@ class EmployeesController extends Controller
         // $vcard->addLabel('street, worktown, workpostcode Belgium');
         $vcard->addURL($employees->website);
         $vcard->addPhoto($employees->photo);
+        $vcard->addURL($employees->linkedin);
         return $vcard->download();
     }
 

@@ -27,6 +27,7 @@ class Employees extends Model
         'photo',
         'qr_path',
         'job_position',
+        'linkedin',
     ];
 
     public function employeetime(){
